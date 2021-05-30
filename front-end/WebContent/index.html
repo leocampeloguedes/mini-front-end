@@ -7,24 +7,45 @@
 <body>
 	<!-- Mini curso front-end -->
 
-	<form action="">
+	<form action="" method="post" onsubmit="return validarDados()? true : false">
 		<table>
 			<tr>
 				<td><label>Nome:</label></td>
-				<td><input type="text" id="nome" name="nome"></td>
+				<td><input type="text" id="nome" name="nome" style="border-radius:5px;"></td>
 			</tr>
 			<tr>
 				<td><label>Login:</label></td>
-				<td><input type="text" id="login" name="login"></td>
+				<td><input type="text" id="login" name="login" style="border-radius:5px;"></td>
 			<tr>
 				<td><label>Senha:</label></td>
-				<td><input type="password" id="senha" name="senha"></td>
+				<td><input type="password" id="senha" name="senha" style="border-radius:5px;"></td>
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" value="salvar" style="width: 100%;"></td>
+				<td><input type="submit" value="salvar" style="width: 100%; border-radius:5px;"></td>
 			</tr>
 		</table>
 	</form>
+	
+	<script type="text/javascript">
+		function validarDados(){
+			var nome = document.getElementById("nome").value;
+			var login = document.getElementById("login").value;
+			var senha = document.getElementById("senha").value;
+			
+			if(nome == ''){
+				alert('Informe o nome!');
+				return false;
+			}else if(login == ''){
+				alert("Informe o login!");
+				return false;
+			}else if(senha == ''){
+				alert("Informe a senha!")
+				return false;
+			}
+			
+			return true;
+		}
+	</script>
 </body>
 </html>
